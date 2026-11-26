@@ -10,4 +10,4 @@ Import the extracted project root. The included vercel.json selects the static b
 
 ## Quote requests
 
-The form validates entries and downloads a text draft. Online delivery is pending configuration. The hero uses an illustrative packing and cargo video loop.
+The form validates entries and opens a prefilled WhatsApp message to +255 651 728 851. The buyer reviews and sends the message in WhatsApp. The hero uses an illustrative packing and cargo video loop.

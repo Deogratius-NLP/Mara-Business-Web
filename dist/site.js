@@ -33,13 +33,9 @@ if (form) {
     const fields = new FormData(form);
     const labels = {company:'Company',email:'Work email',product:'Product',quantity:'Estimated quantity',destination:'Destination country or port',notes:'Notes'};
     const lines = Object.entries(labels).map(([key, label]) => label + ': ' + fields.get(key).trim());
-    const file = new Blob(['MARA BUSINESS — quote request\n\n' + lines.join('\n') + '\n'], {type:'text/plain;charset=utf-8'});
-    const url = URL.createObjectURL(file);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'mara-business-quote-request.txt';
-    link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    document.querySelector('#form-status').textContent = 'Your quote draft is ready to download.';
+    const message = ['MARA BUSINESS — quote request', '', ...lines].join('\n');
+    const whatsapp = new URL('https://wa.me/255651728851');
+    whatsapp.searchParams.set('text', message);
+    window.location.assign(whatsapp.href);
   });
 }
